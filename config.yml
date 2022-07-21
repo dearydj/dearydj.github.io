@@ -2,6 +2,8 @@ baseURL: "https://env-cffgqqpx-1302593112.tcloudbaseapp.com/"
 title: GameDev
 paginate: 5
 theme: PaperMod
+assignees: ""
+blank_issues_enabled: false
 
 blackfriday:
   extensions: ["softLineBreak"]

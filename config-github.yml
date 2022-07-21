@@ -2,7 +2,8 @@ baseURL: "https://dearydj.github.io/"
 title: GameDev
 paginate: 5
 theme: PaperMod
-
+assignees: ""
+blank_issues_enabled: false
 publishDir: "docs"
 
 blackfriday:

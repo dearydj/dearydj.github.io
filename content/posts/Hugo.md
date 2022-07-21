@@ -146,6 +146,9 @@ https://themes.gohugo.io/themes/hugo-papermod/
 https://adityatelange.github.io/hugo-PaperMod/
 
 ```bash
+git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+git submodule update --init --recursive
+git submodule update --remote --merge
 # 把这篇文章放进去
 hugo new posts/Hugo.md
 # 启动本地Hugo服务
