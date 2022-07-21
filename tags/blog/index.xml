@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>blog on GameDev</title>
-    <link>https://env-cffgqqpx-1302593112.tcloudbaseapp.com/tags/blog/</link>
+    <link>https://dearydj.github.io/tags/blog/</link>
     <description>Recent content in blog on GameDev</description>
     <image>
-      <url>https://env-cffgqqpx-1302593112.tcloudbaseapp.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://env-cffgqqpx-1302593112.tcloudbaseapp.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://dearydj.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://dearydj.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 20 Jul 2022 11:30:03 +0000</lastBuildDate><atom:link href="https://env-cffgqqpx-1302593112.tcloudbaseapp.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Jul 2022 11:30:03 +0000</lastBuildDate><atom:link href="https://dearydj.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>部署Hugo</title>
-      <link>https://env-cffgqqpx-1302593112.tcloudbaseapp.com/posts/hugo/</link>
+      <link>https://dearydj.github.io/posts/hugo/</link>
       <pubDate>Wed, 20 Jul 2022 11:30:03 +0000</pubDate>
       
-      <guid>https://env-cffgqqpx-1302593112.tcloudbaseapp.com/posts/hugo/</guid>
+      <guid>https://dearydj.github.io/posts/hugo/</guid>
       <description>部署 Hugo 记录 Hugo 是静态网页生成器，本文记录用 Hugo 和腾讯云静态托管创建个人博客
 A Fast and Flexible Static Site Generator built with love by bep, spf13 and friends in Go.
 参考资料
