@@ -112,6 +112,7 @@ cloudbase hosting deploy ./public -e EnvID
 此处的 EnvID 替换为上述 [步骤](#envid) 创建好的环境 ID。
 ![1658376807674](../../image/Hugo/1658376807674.png) 7. 登录 [云开发控制台](https://console.cloud.tencent.com/tcb/env/index)，进入 [静态网站托管](https://console.cloud.tencent.com/tcb/hosting/index) 页面，可以找到默认的域名，单击域名，即可看到您刚部署的 Hugo。
 
+[我的站点](https://env-cffgqqpx-1302593112.tcloudbaseapp.com/)
 ## Github托管
 
 [文档](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
@@ -129,11 +130,12 @@ $$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f'} \mathcal{N}(f; \mu(x), \kap
 ```bash
 hugo --config ./config-github.yml 
 ```
-5. 访问https://dearydj.github.io/
+5. 访问 https://dearydj.github.io/
 
 [Github页面样式表报错](https://stackoverflow.com/questions/65040931/hugo-failed-to-find-a-valid-digest-in-the-integrity-attribute-for-resource)
 > I replaced integrity="{{ $stylesheet.Data.Integrity }}" with integrity="" and it worked!
 
+[我的站点](https://dearydj.github.io/)
 ## 自定义
 
 ### 使用 blog 为网站名
