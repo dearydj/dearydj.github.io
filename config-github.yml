@@ -11,7 +11,7 @@ blackfriday:
   extensions: ["softLineBreak"]
 
 enableRobotsTXT: true
-buildDrafts: false
+buildDrafts: true
 buildFuture: false
 buildExpired: false
 
@@ -30,7 +30,7 @@ params:
   # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
-  defaultTheme: auto # auto, dark, light
+  defaultTheme: dark # auto, dark, light
   disableThemeToggle: false
 
   ShowReadingTime: true

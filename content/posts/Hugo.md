@@ -122,10 +122,14 @@ cloudbase hosting deploy ./public -e EnvID
 [配置](https://frankccccc.github.io/blog/posts/move_blog/)
 [Github页面样式表报错](https://stackoverflow.com/questions/65040931/hugo-failed-to-find-a-valid-digest-in-the-integrity-attribute-for-resource)
 
-1. 新建Github组织orgName, 仓库orgName.github.io
+1. 新建Github组织dearydj, 仓库dearydj.github.io
 2. github仓库setting->page页面可以修改分支和仓库位置
-3. 将public文件夹转换为git仓库，并推送，用githubdesk操作
-4. 访问https://orgName.github.io/
+3. 使用root目录，将public文件夹转换为git仓库，并推送，用githubdesk操作
+4. 使用docs目录，添加新yml配置文件，加一行 publishDir: "docs"
+```bash
+hugo --config ./config-github.yml 
+```
+5. 访问https://dearydj.github.io/
 
 
 ## 自定义

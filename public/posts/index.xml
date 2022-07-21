@@ -27,5 +27,14 @@ set PATH=%PATH%;C:\Hugo\bin 检查 hugo 命令是否可以使用
 cd quickstart git init git submodule add https://github.</description>
     </item>
     
+    <item>
+      <title>可用性检查</title>
+      <link>https://env-cffgqqpx-1302593112.tcloudbaseapp.com/posts/sample/</link>
+      <pubDate>Tue, 15 Sep 2020 11:30:03 +0000</pubDate>
+      
+      <guid>https://env-cffgqqpx-1302593112.tcloudbaseapp.com/posts/sample/</guid>
+      <description>Desc Text.</description>
+    </item>
+    
   </channel>
 </rss>
