@@ -1,9 +1,10 @@
 baseURL: "https://env-cffgqqpx-1302593112.tcloudbaseapp.com/"
-title: GameDev
+title: YangDejian
 paginate: 5
 theme: PaperMod
 assignees: ""
 blank_issues_enabled: false
+math: true
 
 blackfriday:
   extensions: ["softLineBreak"]
@@ -78,7 +79,7 @@ params:
 
   # home-info mode
   homeInfoParams:
-    Title: "细碎的记录 \U0001F44B"
+    Title: "ydj \U0001F44B"
     Content: Welcome to my blog
 
   # socialIcons:

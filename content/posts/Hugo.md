@@ -115,12 +115,12 @@ cloudbase hosting deploy ./public -e EnvID
 ## Github托管
 
 [文档](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
-
 [参考]https://zhuanlan.zhihu.com/p/57361697
-
 [githubpage](https://pages.github.com/)
 [配置](https://frankccccc.github.io/blog/posts/move_blog/)
-[Github页面样式表报错](https://stackoverflow.com/questions/65040931/hugo-failed-to-find-a-valid-digest-in-the-integrity-attribute-for-resource)
+
+$$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f'} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df
+=\phi(f'; \mu(x), \kappa(x, x))$$
 
 1. 新建Github组织dearydj, 仓库dearydj.github.io
 2. github仓库setting->page页面可以修改分支和仓库位置
@@ -131,6 +131,8 @@ hugo --config ./config-github.yml
 ```
 5. 访问https://dearydj.github.io/
 
+[Github页面样式表报错](https://stackoverflow.com/questions/65040931/hugo-failed-to-find-a-valid-digest-in-the-integrity-attribute-for-resource)
+> I replaced integrity="{{ $stylesheet.Data.Integrity }}" with integrity="" and it worked!
 
 ## 自定义
 
@@ -162,7 +164,10 @@ hugo server -D
 hugo -D
 ```
 
-### 换行符问题
+[Github页面样式表报错](https://stackoverflow.com/questions/65040931/hugo-failed-to-find-a-valid-digest-in-the-integrity-attribute-for-resource)
+> I replaced integrity="{{ $stylesheet.Data.Integrity }}" with integrity="" and it worked!
+
+## 换行符问题
 
 Hugo 使用 BlackFriday 把 markdown 转换为 HTML，可以在 Hugo 的配置文件中添加以下设置，将换行符强制输出为硬换行。
 
@@ -176,7 +181,7 @@ blackfriday:
     extensions: ["hardLineBreak"]
 ```
 
-### 本地图片问题
+## 本地图片问题
 
 如何让 Hugo 和本地都能正常显示本地图片，且本地插入图片只需要复制
 编辑器以 vscode 为例
@@ -206,7 +211,79 @@ mklink .\image .\static\image /J
 
 问题：Hugo 支持层级目录，vscode 插件还未找到如何配置
 
-### 写在最后
+## Latex 公式问题
+[参考这里](https://frankccccc.github.io/blog/posts/move_blog/)
+
+參考這篇
+
+### Step 1
+首先在安裝好的主題裡面layouts/partials/mathjax_support.html新增.html檔
+
+```
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+```
+
+### Step 2
+在layouts/partials/header.html的`</head>` tag裡面再新增這段code
+```
+{{ partial "mathjax_support.html" . }}
+```
+### Step 3
+最後在assets/css/header.css檔裡面再加上這段code，如果沒有這個檔案，就把code加到所有頁面都會用到的CSS檔
+```
+code.has-jax {
+    -webkit-font-smoothing: antialiased;
+    background: inherit !important;
+    border: none !important;
+    font-size: 100%;
+}
+```
+以上，完工。給個範例
+```
+$$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f'} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df
+=\phi(f'; \mu(x), \kappa(x, x))$$
+```
+$$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f'} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df
+=\phi(f'; \mu(x), \kappa(x, x))$$
+顯示很完美
+
+
+只不過會Mathjax在parse底線的時，有時候會有一點問題，如
+```
+$\begin{equation} x_t = \mathop{\arg\max}_{x \in X} \ \ a_{PI}(x|D_{1:t−1}) \end{equation}$
+```
+顯示會出現
+
+$\begin{equation} x_t = \mathop{\arg\max}{x \in X} \ \ a{PI}(x|D_{1:t−1}) \end{equation}$
+
+會壞掉，解決辦法就是前後都加個 ` 符號，變成
+```
+`$\begin{equation} x_t = \mathop{\arg\max}_{x \in X} \ \ a_{PI}(x|D_{1:t−1}) \end{equation}$`
+```
+`$\begin{equation} x_t = \mathop{\arg\max}_{x \in X} \ \ a_{PI}(x|D_{1:t−1}) \end{equation}$`
+```
+$$ \begin{equation} x_t = \mathop{\arg\max}_{x \in X} \ \ a_{PI}(x|D_{1:t−1}) \end{equation} $$
+```
+$$ \begin{equation} x_t = \mathop{\arg\max}_{x \in X} \ \ a_{PI}(x|D_{1:t−1}) \end{equation} $$
+
+顯示就會正常了，但是會以Inline Code的方式顯示，就會變的小一點。這種現象的主要原因是在Step 1我們是把LATEX Code和Markdown的code一起parse，但Markdown語法本身就會用到底線，這會導致重複定義同一個符號，所以就需要而外把LATEX抓出來塞到Inline Code裡面處理，就不會重複定義。但基本上很少遇到有問題的情況，若遇到顯示有問題再加 ` 就好。
+
+## 写在最后
 
 Hugo优点
 1. 静态页可以避免服务器风险
