@@ -120,6 +120,7 @@ cloudbase hosting deploy ./public -e EnvID
 
 [githubpage](https://pages.github.com/)
 [配置](https://frankccccc.github.io/blog/posts/move_blog/)
+[Github页面样式表报错](https://stackoverflow.com/questions/65040931/hugo-failed-to-find-a-valid-digest-in-the-integrity-attribute-for-resource)
 
 1. 新建Github组织orgName, 仓库orgName.github.io
 2. github仓库setting->page页面可以修改分支和仓库位置
