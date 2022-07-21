@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"vscode-office.pasterImgPath": "../../image/${fileName}/${now}.png",
+		"picgo.picBed.uploader": "tcyun",
+	},
+	"extensions": {
+		"recommendations": [
+			"cweijan.vscode-office"
+		]
+	}
+}
