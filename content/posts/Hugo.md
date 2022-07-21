@@ -6,7 +6,9 @@ cover:
     image: "../../image/Hugo/1658392342400.png"
 ---
 
-![1658392342400](../../image/Hugo/1658392342400.png)
+<!-- ![1658392342400](../../image/Hugo/1658392342400.png) -->
+
+![1658392342400](https://lskypro-1302593112.cos.ap-hongkong.myqcloud.com/picgo/Hugo/1658392342400.png)
 
 # 部署 Hugo 记录
 
@@ -86,7 +88,8 @@ Output will be in ./public/ directory by default (-d/--destination flag to chang
 ## 腾讯云 静态托管部署
 
 1. 登录 [云开发控制台](https://console.cloud.tencent.com/tcb/env/index)，单击新建，选择空模板，单击下一步，填写环境名称并开通“按量计费”环境。
-   ![1658376495710](../../image/Hugo/1658376495710.png)
+    <!-- ![1658376495710](../../image/Hugo/1658376495710.png) -->
+    ![1658376495710](https://lskypro-1302593112.cos.ap-hongkong.myqcloud.com/picgo/Hugo/1658376495710.png)
 
 开通环境以后，进入 [环境概览](https://console.cloud.tencent.com/tcb/env/overview) 页面请记住您的<a id="envid">环境 Id</a>，这个 ID 后续部署需要用到。 2. 在本地安装 Node.js。如未安装请前往 Node.js 官网 [下载安装](https://nodejs.org/)，并确保 Node.js 安装成功。 3. 打开命令提示符，执行以下命令安装 cloudbase cli：
 
@@ -101,8 +104,14 @@ tcb login
 ```
 
 登录成功如下图所示：
-![1658376635723](../../image/Hugo/1658376635723.png) 5. 在弹出的页面中单击确认授权进行授权：
-![1658376640942](../../image/Hugo/1658376640942.png) 6. 执行以下命令，在 hugo-site 中部署 public 目录中的文件：
+
+<!-- ![1658376635723](../../image/Hugo/1658376635723.png)  -->
+
+![1658376635723](https://lskypro-1302593112.cos.ap-hongkong.myqcloud.com/picgo/Hugo/1658376635723.png) 5. 在弹出的页面中单击确认授权进行授权：
+
+<!-- ![1658376640942](../../image/Hugo/1658376640942.png)  -->
+
+![1658376640942](https://lskypro-1302593112.cos.ap-hongkong.myqcloud.com/picgo/Hugo/1658376640942.png) 6. 执行以下命令，在 hugo-site 中部署 public 目录中的文件：
 
 ```bash
 cloudbase hosting deploy ./public  -e EnvID
@@ -110,32 +119,42 @@ cloudbase hosting deploy ./public  -e EnvID
 
 cloudbase hosting deploy ./public -e EnvID
 此处的 EnvID 替换为上述 [步骤](#envid) 创建好的环境 ID。
-![1658376807674](../../image/Hugo/1658376807674.png) 7. 登录 [云开发控制台](https://console.cloud.tencent.com/tcb/env/index)，进入 [静态网站托管](https://console.cloud.tencent.com/tcb/hosting/index) 页面，可以找到默认的域名，单击域名，即可看到您刚部署的 Hugo。
+
+<!-- ![1658376807674](../../image/Hugo/1658376807674.png)  -->
+
+![1658376807674](https://lskypro-1302593112.cos.ap-hongkong.myqcloud.com/picgo/Hugo/1658376807674.png) 7. 登录 [云开发控制台](https://console.cloud.tencent.com/tcb/env/index)，进入 [静态网站托管](https://console.cloud.tencent.com/tcb/hosting/index) 页面，可以找到默认的域名，单击域名，即可看到您刚部署的 Hugo。
 
 [我的站点](https://env-cffgqqpx-1302593112.tcloudbaseapp.com/)
-## Github托管
+
+## Github 托管
 
 [文档](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
 [参考]https://zhuanlan.zhihu.com/p/57361697
 [githubpage](https://pages.github.com/)
 [配置](https://frankccccc.github.io/blog/posts/move_blog/)
 
-$$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f'} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df
-=\phi(f'; \mu(x), \kappa(x, x))$$
+$$
+a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f'} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df
+=\phi(f'; \mu(x), \kappa(x, x))
+$$
 
-1. 新建Github组织dearydj, 仓库dearydj.github.io
-2. github仓库setting->page页面可以修改分支和仓库位置
-3. 使用root目录，将public文件夹转换为git仓库，并推送，用githubdesk操作
-4. 使用docs目录，添加新yml配置文件，加一行 publishDir: "docs"
+1. 新建 Github 组织 dearydj, 仓库 dearydj.github.io
+2. github 仓库 setting->page 页面可以修改分支和仓库位置
+3. 使用 root 目录，将 public 文件夹转换为 git 仓库，并推送，用 githubdesk 操作
+4. 使用 docs 目录，添加新 yml 配置文件，加一行 publishDir: "docs"
+
 ```bash
-hugo --config ./config-github.yml 
+hugo --config ./config-github.yml
 ```
+
 5. 访问 https://dearydj.github.io/
 
-[Github页面样式表报错](https://stackoverflow.com/questions/65040931/hugo-failed-to-find-a-valid-digest-in-the-integrity-attribute-for-resource)
+[Github 页面样式表报错](https://stackoverflow.com/questions/65040931/hugo-failed-to-find-a-valid-digest-in-the-integrity-attribute-for-resource)
+
 > I replaced integrity="{{ $stylesheet.Data.Integrity }}" with integrity="" and it worked!
 
 [我的站点](https://dearydj.github.io/)
+
 ## 自定义
 
 ### 使用 blog 为网站名
@@ -166,7 +185,8 @@ hugo server -D
 hugo -D
 ```
 
-[Github页面样式表报错](https://stackoverflow.com/questions/65040931/hugo-failed-to-find-a-valid-digest-in-the-integrity-attribute-for-resource)
+[Github 页面样式表报错](https://stackoverflow.com/questions/65040931/hugo-failed-to-find-a-valid-digest-in-the-integrity-attribute-for-resource)
+
 > I replaced integrity="{{ $stylesheet.Data.Integrity }}" with integrity="" and it worked!
 
 ## 换行符问题
@@ -197,8 +217,9 @@ blackfriday:
 -   ../../image/my-image.png
 
 3. 本地安装插件"cweijan.vscode-office"，用于图片自动复制到本地，路径配置为如下格式
-   ![1658390369008](../../image/Hugo/1658390369008.png)
-   用../../image/my-image.png 形式是因为/image/my-image.png 会上传到意外的路径
+    <!-- ![1658390369008](../../image/Hugo/1658390369008.png) -->
+    ![1658390369008](https://lskypro-1302593112.cos.ap-hongkong.myqcloud.com/picgo/Hugo/1658390369008.png)
+    用../../image/my-image.png 形式是因为/image/my-image.png 会上传到意外的路径
 4. 链接本地目录和 static 目录
    创建好.\static\image 目录(真实目录，Hugo 的 static 不能是软链接)
    通过软链接创建.\image 目录
@@ -209,17 +230,29 @@ mklink .\image .\static\image /J
 ```
 
 完成后目录结构如下
-![1658390401201](../../image/Hugo/1658390401201.png)
+
+<!-- ![1658390401201](../../image/Hugo/1658390401201.png) -->
+
+![1658390401201](https://lskypro-1302593112.cos.ap-hongkong.myqcloud.com/picgo/Hugo/1658390401201.png)
+
+本文列出的两个 Hugo 部署路径中，显示的图片是基于图床中的，但每张图片上面会有一个注释的本地图片，可以打开开发者工具查看，如上一张图
+
+```
+<!-- ![1658390401201](../../image/Hugo/1658390401201.png) -->
+![1658390401201](https://lskypro-1302593112.cos.ap-hongkong.myqcloud.com/picgo/Hugo/1658390401201.png)
+```
 
 问题：Hugo 支持层级目录，vscode 插件还未找到如何配置
 
 ## Latex 公式问题
+
 [参考这里](https://frankccccc.github.io/blog/posts/move_blog/)
 
 參考這篇
 
 ### Step 1
-首先在安裝好的主題裡面layouts/partials/mathjax_support.html新增.html檔
+
+首先在安裝好的主題裡面 layouts/partials/mathjax_support.html 新增.html 檔
 
 ```
   MathJax = {
@@ -241,12 +274,17 @@ mklink .\image .\static\image /J
 ```
 
 ### Step 2
-在layouts/partials/header.html的`</head>` tag裡面再新增這段code
+
+在 layouts/partials/header.html 的`</head>` tag 裡面再新增這段 code
+
 ```
 {{ partial "mathjax_support.html" . }}
 ```
+
 ### Step 3
-最後在assets/css/header.css檔裡面再加上這段code，如果沒有這個檔案，就把code加到所有頁面都會用到的CSS檔
+
+最後在 assets/css/header.css 檔裡面再加上這段 code，如果沒有這個檔案，就把 code 加到所有頁面都會用到的 CSS 檔
+
 ```
 code.has-jax {
     -webkit-font-smoothing: antialiased;
@@ -255,46 +293,59 @@ code.has-jax {
     font-size: 100%;
 }
 ```
+
 以上，完工。給個範例
+
 ```
 $$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f'} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df
 =\phi(f'; \mu(x), \kappa(x, x))$$
 ```
-$$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f'} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df
-=\phi(f'; \mu(x), \kappa(x, x))$$
+
+$$
+a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f'} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df
+=\phi(f'; \mu(x), \kappa(x, x))
+$$
+
 顯示很完美
 
+只不過會 Mathjax 在 parse 底線的時，有時候會有一點問題，如
 
-只不過會Mathjax在parse底線的時，有時候會有一點問題，如
 ```
 $\begin{equation} x_t = \mathop{\arg\max}_{x \in X} \ \ a_{PI}(x|D_{1:t−1}) \end{equation}$
 ```
+
 顯示會出現
 
 $\begin{equation} x_t = \mathop{\arg\max}{x \in X} \ \ a{PI}(x|D_{1:t−1}) \end{equation}$
 
 會壞掉，解決辦法就是前後都加個 ` 符號，變成
-```
-`$\begin{equation} x_t = \mathop{\arg\max}_{x \in X} \ \ a_{PI}(x|D_{1:t−1}) \end{equation}$`
-```
-`$\begin{equation} x_t = \mathop{\arg\max}_{x \in X} \ \ a_{PI}(x|D_{1:t−1}) \end{equation}$`
-```
-$$ \begin{equation} x_t = \mathop{\arg\max}_{x \in X} \ \ a_{PI}(x|D_{1:t−1}) \end{equation} $$
-```
-$$ \begin{equation} x_t = \mathop{\arg\max}_{x \in X} \ \ a_{PI}(x|D_{1:t−1}) \end{equation} $$
 
-顯示就會正常了，但是會以Inline Code的方式顯示，就會變的小一點。這種現象的主要原因是在Step 1我們是把LATEX Code和Markdown的code一起parse，但Markdown語法本身就會用到底線，這會導致重複定義同一個符號，所以就需要而外把LATEX抓出來塞到Inline Code裡面處理，就不會重複定義。但基本上很少遇到有問題的情況，若遇到顯示有問題再加 ` 就好。
+```
+`$\begin{equation} x_t = \mathop{\arg\max}_{x \in X} \ \ a_{PI}(x|D_{1:t−1}) \end{equation}$`
+```
+
+`$\begin{equation} x_t = \mathop{\arg\max}_{x \in X} \ \ a_{PI}(x|D_{1:t−1}) \end{equation}$`
+
+```
+$$ \begin{equation} x_t = \mathop{\arg\max}_{x \in X} \ \ a_{PI}(x|D_{1:t−1}) \end{equation} $$
+```
+
+$$ \begin{equation} x*t = \mathop{\arg\max}*{x \in X} \ \ a*{PI}(x|D*{1:t−1}) \end{equation} $$
+
+顯示就會正常了，但是會以 Inline Code 的方式顯示，就會變的小一點。這種現象的主要原因是在 Step 1 我們是把 LATEX Code 和 Markdown 的 code 一起 parse，但 Markdown 語法本身就會用到底線，這會導致重複定義同一個符號，所以就需要而外把 LATEX 抓出來塞到 Inline Code 裡面處理，就不會重複定義。但基本上很少遇到有問題的情況，若遇到顯示有問題再加 ` 就好。
 
 ## 写在最后
 
-Hugo优点
+Hugo 优点
+
 1. 静态页可以避免服务器风险
 2. 能使用本地图片
 
 但目前存在一系列问题
-1. MarkDown解释器的软换行配置不生效
+
+1. MarkDown 解释器的软换行配置不生效
 2. 能使用本地图片，但却存在限制
 3. 没有图形界面，使用太过耗时
-4. 表头会污染MarkDown源文件
+4. 表头会污染 MarkDown 源文件
 5. 腾讯云部署域名必须备案，配置短链不可行
-6. MarkDown语法支持有限，如常用的图片标签
+6. MarkDown 语法支持有限，如常用的图片标签
