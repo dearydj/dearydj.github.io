@@ -12,10 +12,10 @@
     <lastBuildDate>Wed, 20 Jul 2022 11:30:03 +0000</lastBuildDate><atom:link href="https://dearydj.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>部署Hugo</title>
-      <link>https://dearydj.github.io/posts/hugo/</link>
+      <link>https://dearydj.github.io/posts/hugo-r/</link>
       <pubDate>Wed, 20 Jul 2022 11:30:03 +0000</pubDate>
       
-      <guid>https://dearydj.github.io/posts/hugo/</guid>
+      <guid>https://dearydj.github.io/posts/hugo-r/</guid>
       <description>部署 Hugo 记录 Hugo 是静态网页生成器，本文记录用 Hugo 和腾讯云静态托管创建个人博客
 A Fast and Flexible Static Site Generator built with love by bep, spf13 and friends in Go.
 参考资料
