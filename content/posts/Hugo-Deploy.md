@@ -12,9 +12,11 @@ cover:
 
 # 部署 Hugo 记录
 
-Hugo 是静态网页生成器，本文记录用 Hugo 和腾讯云静态托管创建个人博客
+Hugo 是静态网页生成器
 
 > A Fast and Flexible Static Site Generator built with love by bep, spf13 and friends in Go.
+
+本文记录用 Hugo 和腾讯云静态托管\Github 托管创建个人博客
 
 参考资料
 
@@ -22,9 +24,6 @@ Hugo 是静态网页生成器，本文记录用 Hugo 和腾讯云静态托管创
 2. [几个常见博客的对比](https://blog.laoda.de/archives/blog-choosing)
 3. [Hugo 文档：quikstart](https://gohugo.io/getting-started/quick-start/)
 4. [腾讯云静态网站托管部署 Hugo](https://cloud.tencent.com/document/product/1210/43389)
-
-环境
-hugo v0.101.0-466fa43c16709b4483689930a4f9ac8add5c9f66 windows/amd64 BuildDate=2022-06-16T07:09:16Z VendorInfo=gohugoio
 
 ## Hugo
 
@@ -42,6 +41,12 @@ set PATH=%PATH%;C:\Hugo\bin
 ```
 
 检查 hugo 命令是否可以使用
+
+```bash
+hugo version
+```
+
+本文显示版本：hugo v0.101.0-466fa43c16709b4483689930a4f9ac8add5c9f66 windows/amd64 BuildDate=2022-06-16T07:09:16Z VendorInfo=gohugoio
 
 ### 创建新 Site
 
@@ -74,8 +79,7 @@ hugo new posts/my-first-post.md
 hugo server -D
 ```
 
-Navigate to your new site at http://localhost:1313/.
-具体端口看日志
+打开本地网址 http://localhost:1313/. (具体端口可查看日志)
 
 ### 构建静态页
 
@@ -83,7 +87,9 @@ Navigate to your new site at http://localhost:1313/.
 hugo -D
 ```
 
-Output will be in ./public/ directory by default (-d/--destination flag to change it, or set publishdir in the config file).
+-D 表示构建草稿，具体配置可用 hugo --help 查看命令
+
+默认输出在 ./public/ 文件夹
 
 ## 腾讯云 静态托管部署
 
@@ -91,7 +97,11 @@ Output will be in ./public/ directory by default (-d/--destination flag to chang
     <!-- ![1658376495710](../../image/Hugo/1658376495710.png) -->
     ![1658376495710](https://lskypro-1302593112.cos.ap-hongkong.myqcloud.com/picgo/Hugo/1658376495710.png)
 
-开通环境以后，进入 [环境概览](https://console.cloud.tencent.com/tcb/env/overview) 页面请记住您的<a id="envid">环境 Id</a>，这个 ID 后续部署需要用到。 2. 在本地安装 Node.js。如未安装请前往 Node.js 官网 [下载安装](https://nodejs.org/)，并确保 Node.js 安装成功。 3. 打开命令提示符，执行以下命令安装 cloudbase cli：
+开通环境以后，进入 [环境概览](https://console.cloud.tencent.com/tcb/env/overview) 页面请记住您的<a id="envid">环境 Id</a>，这个 ID 后续部署需要用到。
+
+2. 在本地安装 Node.js。如未安装请前往 Node.js 官网 [下载安装](https://nodejs.org/)，并确保 Node.js 安装成功。
+
+3. 打开命令提示符，执行以下命令安装 cloudbase cli：
 
 ```bash
 npm install -g @cloudbase/cli
@@ -107,17 +117,20 @@ tcb login
 
 <!-- ![1658376635723](../../image/Hugo/1658376635723.png)  -->
 
-![1658376635723](https://lskypro-1302593112.cos.ap-hongkong.myqcloud.com/picgo/Hugo/1658376635723.png) 5. 在弹出的页面中单击确认授权进行授权：
+![1658376635723](https://lskypro-1302593112.cos.ap-hongkong.myqcloud.com/picgo/Hugo/1658376635723.png)
+
+5. 在弹出的页面中单击确认授权进行授权：
 
 <!-- ![1658376640942](../../image/Hugo/1658376640942.png)  -->
 
-![1658376640942](https://lskypro-1302593112.cos.ap-hongkong.myqcloud.com/picgo/Hugo/1658376640942.png) 6. 执行以下命令，在 hugo-site 中部署 public 目录中的文件：
+![1658376640942](https://lskypro-1302593112.cos.ap-hongkong.myqcloud.com/picgo/Hugo/1658376640942.png)
+
+6. 执行以下命令，在 hugo-site 中部署 public 目录中的文件：
 
 ```bash
 cloudbase hosting deploy ./public  -e EnvID
 ```
 
-cloudbase hosting deploy ./public -e EnvID
 此处的 EnvID 替换为上述 [步骤](#envid) 创建好的环境 ID。
 
 <!-- ![1658376807674](../../image/Hugo/1658376807674.png)  -->
@@ -128,32 +141,23 @@ cloudbase hosting deploy ./public -e EnvID
 
 ## Github 托管
 
-[文档](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
-[参考]https://zhuanlan.zhihu.com/p/57361697
-[githubpage](https://pages.github.com/)
-[配置](https://frankccccc.github.io/blog/posts/move_blog/)
-
-$$
-a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f'} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df
-=\phi(f'; \mu(x), \kappa(x, x))
-$$
-
 1. 新建 Github 组织 dearydj, 仓库 dearydj.github.io
 2. github 仓库 setting->page 页面可以修改分支和仓库位置
-3. 使用 root 目录，将 public 文件夹转换为 git 仓库，并推送，用 githubdesk 操作
-4. 使用 docs 目录，添加新 yml 配置文件，加一行 publishDir: "docs"
+    - 使用 root 目录，将 public 文件夹转换为 git 仓库，并推送
+    - 使用 docs 目录，将新建 site 所在文件夹转换为 git 仓库，并推送
+3. 添加新 yml 配置文件 ./config-github.yml，加一行 publishDir: "docs"，用一下命令构建
 
 ```bash
 hugo --config ./config-github.yml
 ```
 
-5. 访问 https://dearydj.github.io/
-
-[Github 页面样式表报错](https://stackoverflow.com/questions/65040931/hugo-failed-to-find-a-valid-digest-in-the-integrity-attribute-for-resource)
-
-> I replaced integrity="{{ $stylesheet.Data.Integrity }}" with integrity="" and it worked!
+4. 访问 https://dearydj.github.io/
 
 [我的站点](https://dearydj.github.io/)
+[hugo 文档](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
+[参考](https://zhuanlan.zhihu.com/p/57361697)
+[GithubPage 介绍](https://pages.github.com/)
+[gh-page 配置参考](https://frankccccc.github.io/blog/posts/move_blog/)
 
 ## 自定义
 
@@ -193,10 +197,7 @@ hugo -D
 
 Hugo 使用 BlackFriday 把 markdown 转换为 HTML，可以在 Hugo 的配置文件中添加以下设置，将换行符强制输出为硬换行。
 
-```toml
-blackfriday:
-  extensions: ["hardLineBreak"]
-```
+> 本文配置未生效
 
 ```yml
 blackfriday:
@@ -206,9 +207,8 @@ blackfriday:
 ## 本地图片问题
 
 如何让 Hugo 和本地都能正常显示本地图片，且本地插入图片只需要复制
-编辑器以 vscode 为例
 
-[参考](https://blog.dontjudge.cn/post/hugo-%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E5%9B%BE%E7%89%87%E6%8F%92%E5%85%A5/)
+编辑器以 vscode 为例
 
 1. hugo 的 static 文件夹下会被打包，文章 markdown 文件构建后位置在 public/content/post/your-post-name 文件夹下
 2. 如果 static 下防止 image/my-image.png 图片，文章打包后引用到图片有两种方式
@@ -219,10 +219,11 @@ blackfriday:
 3. 本地安装插件"cweijan.vscode-office"，用于图片自动复制到本地，路径配置为如下格式
     <!-- ![1658390369008](../../image/Hugo/1658390369008.png) -->
     ![1658390369008](https://lskypro-1302593112.cos.ap-hongkong.myqcloud.com/picgo/Hugo/1658390369008.png)
-    用../../image/my-image.png 形式是因为/image/my-image.png 会上传到意外的路径
+    用../../image/my-image.png 形式是因为/image/my-image.png 会保存到意外的路径
 4. 链接本地目录和 static 目录
    创建好.\static\image 目录(真实目录，Hugo 的 static 不能是软链接)
    通过软链接创建.\image 目录
+    > 如果要上传 Git 仓库，记着把.\image 加入到忽略列表
 
 ```bash
 cd blog
@@ -244,11 +245,9 @@ mklink .\image .\static\image /J
 
 问题：Hugo 支持层级目录，vscode 插件还未找到如何配置
 
+[参考](https://blog.dontjudge.cn/post/hugo-%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99%E5%9B%BE%E7%89%87%E6%8F%92%E5%85%A5/)
+
 ## Latex 公式问题
-
-[参考这里](https://frankccccc.github.io/blog/posts/move_blog/)
-
-參考這篇
 
 ### Step 1
 
@@ -294,7 +293,7 @@ code.has-jax {
 }
 ```
 
-以上，完工。給個範例
+范例
 
 ```
 $$a_{PI}(x|D) = E[u(x) | x, D] = \int_{-\infty}^{f'} \mathcal{N}(f; \mu(x), \kappa(x, x)) \ df
@@ -334,6 +333,9 @@ $$ \begin{equation} x*t = \mathop{\arg\max}*{x \in X} \ \ a*{PI}(x|D*{1:t−1}) 
 
 顯示就會正常了，但是會以 Inline Code 的方式顯示，就會變的小一點。這種現象的主要原因是在 Step 1 我們是把 LATEX Code 和 Markdown 的 code 一起 parse，但 Markdown 語法本身就會用到底線，這會導致重複定義同一個符號，所以就需要而外把 LATEX 抓出來塞到 Inline Code 裡面處理，就不會重複定義。但基本上很少遇到有問題的情況，若遇到顯示有問題再加 ` 就好。
 
+[MathJax 3](https://geoffruddock.com/math-typesetting-in-hugo/)
+[参考](https://frankccccc.github.io/blog/posts/move_blog/)
+
 ## 写在最后
 
 Hugo 优点
@@ -344,8 +346,7 @@ Hugo 优点
 但目前存在一系列问题
 
 1. MarkDown 解释器的软换行配置不生效
-2. 能使用本地图片，但却存在限制
-3. 没有图形界面，使用太过耗时
-4. 表头会污染 MarkDown 源文件
-5. 腾讯云部署域名必须备案，配置短链不可行
-6. MarkDown 语法支持有限，如常用的图片标签
+2. MarkDown 语法支持有限，如常用的图片标签
+3. 能使用本地图片，但却存在限制
+4. 没有图形界面，使用太过耗时
+5. 表头会污染 MarkDown 源文件
