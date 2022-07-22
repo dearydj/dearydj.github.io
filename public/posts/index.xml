@@ -12,10 +12,10 @@
     <lastBuildDate>Wed, 20 Jul 2022 11:30:03 +0000</lastBuildDate><atom:link href="https://env-cffgqqpx-1302593112.tcloudbaseapp.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>部署Hugo</title>
-      <link>https://env-cffgqqpx-1302593112.tcloudbaseapp.com/posts/hugo-r/</link>
+      <link>https://env-cffgqqpx-1302593112.tcloudbaseapp.com/posts/hugo/</link>
       <pubDate>Wed, 20 Jul 2022 11:30:03 +0000</pubDate>
       
-      <guid>https://env-cffgqqpx-1302593112.tcloudbaseapp.com/posts/hugo-r/</guid>
+      <guid>https://env-cffgqqpx-1302593112.tcloudbaseapp.com/posts/hugo/</guid>
       <description>部署 Hugo 记录 Hugo 是静态网页生成器，本文记录用 Hugo 和腾讯云静态托管创建个人博客
 A Fast and Flexible Static Site Generator built with love by bep, spf13 and friends in Go.
 参考资料
@@ -28,7 +28,7 @@ cd quickstart git init git submodule add https://github.</description>
     </item>
     
     <item>
-      <title>可用性检查</title>
+      <title>Markdown语法支持测试</title>
       <link>https://env-cffgqqpx-1302593112.tcloudbaseapp.com/posts/sample/</link>
       <pubDate>Tue, 15 Sep 2020 11:30:03 +0000</pubDate>
       

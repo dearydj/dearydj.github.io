@@ -84,14 +84,15 @@ params:
     Title: "ydj \U0001F44B"
     Content: Welcome to my blog
 
-  # socialIcons:
-  #   - name: twitter
-  #     url: "https://twitter.com/"
-  #   - name: stackoverflow
-  #     url: "https://stackoverflow.com"
-  #   - name: github
-  #     url: "https://github.com/"
-
+  socialIcons:
+    # - name: twitter
+    #   url: "https://twitter.com/"
+    # - name: stackoverflow
+    #   url: "https://stackoverflow.com"
+    - name: github Hugo
+      url: "https://dearydj.github.io/"
+    - name: 腾讯云Hugo
+      url: "https://dearydj.github.io/"
   analytics:
     google:
       SiteVerificationTag: "XYZabc"
