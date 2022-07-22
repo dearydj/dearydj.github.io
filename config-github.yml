@@ -89,10 +89,7 @@ params:
     #   url: "https://twitter.com/"
     # - name: stackoverflow
     #   url: "https://stackoverflow.com"
-    - name: github Hugo
-      url: "https://dearydj.github.io/"
-    - name: 腾讯云Hugo
-      url: "https://dearydj.github.io/"
+
   analytics:
     google:
       SiteVerificationTag: "XYZabc"
@@ -123,18 +120,22 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    # - identifier: categories
-    #   name: categories
-    #   url: /categories/
-    #   weight: 10
+    - identifier: categories
+      name: categories
+      url: /categories/
+      weight: 10
     - identifier: tags
       name: tags
       url: /tags/
       weight: 20
-    # - identifier: example
-    #   name: example.org
-    #   url: https://example.org
-    #   weight: 30
+    - identifier: github
+      name: github.io
+      url: https://dearydj.github.io/
+      weight: 30
+    - identifier: 腾讯云
+      name: 腾讯云
+      url: https://env-cffgqqpx-1302593112.tcloudbaseapp.com/
+      weight: 40
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
